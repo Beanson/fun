@@ -1,0 +1,16 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form method="post" action="<?php echo U('validate');?>">
+    <lable>教师工号</lable><input type="text" name="teacher_id">
+    <lable>密码</lable><input type="password" name="password">
+    <button>提交</button>
+</form>
+
+</body>
+</html>

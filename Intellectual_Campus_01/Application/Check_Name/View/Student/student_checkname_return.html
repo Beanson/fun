@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form>
+    <input id="course_id" type="button" value="{$course_id}">
+    <input id="open_id" type="button" value="{$open_id}" >
+    <input type="text" name="student_id" value="{$student_id}">
+    <input type="password" name="password">
+    <input type="button" value="确认" name="submit">
+</form>
+
+<script src="__ROOT__/../Thinkphp_3.2.3_Full/Public/Js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/../Thinkphp_3.2.3_Full/Public/Js/jquery.cookie.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $("#submit").click(function(){
+    /*课程ID和微信号的open_id的获取*/
+    var course_id = $('#course_id').val();
+    var student_id = $('#student_id').val();
+    var password = $('#password').val();
+
+    $.post("{:U('CheckName/upDateCheckNameForm')}",
+            {
+                "student_id": student_id,
+                "course_id": course_id,
+                "password": password,
+            },
+            function (status) {
+                alert(status);
+                if (status==true) {
+                    alert("恭喜您，签到成功，再次感谢您使用广外智慧校园系统！");
+                } else {
+                    alert("很抱歉，可能由于网络问题签到失败，请再次扫码进行签到，谢谢！");
+                }
+            })
+            .success(function () {alert("success");
+            })
+            .error(function () {alert("error");
+            })
+            .complete(function () {alert("complete");
+            });
+
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+该课程出勤情况如下：<br>
+    <volist name="check_name_result" id="vo">
+        {$vo.student_id}
+        {$vo.student_name}
+        {$vo.attend_stage} <br>
+    </volist>
+
+    <form action="{:U('sendMail')}" method="post">
+        <input type="hidden" value="{$teacher_id}">
+        <input type="hidden" value="{$course_id}">
+        <input type="submit" value="确定">
+    </form>
+
+</body>
+</html>

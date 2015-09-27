@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="__ROOT__/../Thinkphp_3.2.3_Full/Public/Js/bootstrap.min.js"></script>
+    <link href="__ROOT__/../Thinkphp_3.2.3_Full/Public/Css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<table class="table table-bordered">
+<volist name="course" id="vo">
+    <form action="{:U('CheckName/qrCodeShow')}" method="post">
+
+            <tr>
+                <td class="active">{$vo.course_name}</td>
+                <td class="success">{$vo.course_time}</td>
+                <input type="hidden" value="{$vo.course_id}" name="course_id">
+                <input type="hidden" value="{$teacher_id}" name="teacher_id">
+                <td class="warning"><input type="submit" value="确定"></td>
+            </tr>
+
+    </form>
+</volist>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+本课程签到二维码如下，请同学们进行扫码签到<br>
+<img src="{$qr_code}" width="400px" height="400px">
+
+<form action="{:U('checkResult')}" method="post">
+    <input type="hidden" value="{$teacher_id}" name="teacher_id">
+    <input type="hidden" value="{$course_id}" name="course_id">
+<input type="submit" value="完成">
+</form>
+
+</body>
+</html>
